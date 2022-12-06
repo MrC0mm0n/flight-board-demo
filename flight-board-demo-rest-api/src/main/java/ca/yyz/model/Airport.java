@@ -14,6 +14,6 @@ public class Airport {
 	private String code;
 
 	@NotNull
-	private String label;
+	private String name;
 
 }

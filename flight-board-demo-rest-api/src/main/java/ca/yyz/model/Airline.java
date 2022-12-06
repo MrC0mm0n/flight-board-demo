@@ -11,9 +11,13 @@ import lombok.Data;
 public class Airline {
 
 	@Id
-	private String code;
+	private Integer id;
 
 	@NotNull
-	private String label;
+	private String name;
+	
+	private String iata;
+	
+	private String icao;
 
 }
