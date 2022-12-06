@@ -37,6 +37,7 @@ public class Departure {
 	private Date revised;
 
 	@NotNull
+	@ManyToOne
 	private Status status;
 
 }
