@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-header',
@@ -6,5 +6,19 @@ import { Component } from '@angular/core';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent {
+
+  username: string = '';
+  password: string = '';
+  hideLogin: boolean = false;
+  showAdminFeature: boolean = false;
+
+  onSubmitLoginForm() {
+    if(this.username === this.password) {
+      this.username = '';
+      this.password = '';
+      this.hideLogin = true;
+      this.showAdminFeature = true;
+    }
+  }
 
 }
