@@ -1,3 +1,92 @@
 <div class="container">
-    <p>This is the arrivals page</p>
+
+    <form class="border rounded p-3" name="addArrivalForm" #addArrivalForm="ngForm" (ngSubmit)="addArrivalForm.form.valid && onSubmit()" novalidate >
+        <div class="row mb-3">
+            <div class="col">
+                <div class="input-group">
+                    <span class="input-group-text" id="add-arrival-input-scheduled">Scheduled</span>
+                    <input type="datetime-local" class="form-control" placeholder="Scheduled" name="scheduled"
+                        aria-label="Scheduled" aria-describedby="add-arrival-input-scheduled" required [(ngModel)]="scheduled">
+                </div>
+            </div>
+            <div class="col">
+                <div class="input-group">
+                    <span class="input-group-text" id="add-arrival-input-status">Status</span>
+                    <select class="form-control" placeholder="Status" name="status"
+                        aria-label="Status" aria-describedby="add-arrival-input-status" required [(ngModel)]="status">
+                        <option value="">Select</option>
+                        <option *ngFor="let status of statuses" [ngValue]="status.id">{{ status.label }}</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col">
+                <div class="input-group">
+                    <span class="input-group-text" id="add-arrival-input-origin">Origin</span>
+                    <input type="text" class="form-control" placeholder="Origin" name="origin"
+                        aria-label="Origin" aria-describedby="add-arrival-input-origin" required [(ngModel)]="origin">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <div class="input-group">
+                    <span class="input-group-text" id="add-arrival-input-revised">Revised</span>
+                    <input type="datetime-local" class="form-control" placeholder="Revised" name="revised"
+                        aria-label="Revised" aria-describedby="add-arrival-input-revised" [(ngModel)]="revised">
+                </div>
+            </div>
+            <div class="col">
+                <div class="input-group">
+                    <span class="input-group-text" id="add-arrival-input-airline">Airline</span>
+                    <input type="text" class="form-control" placeholder="Airline" name="airline"
+                        aria-label="Airline" aria-describedby="add-arrival-input-airline" required [(ngModel)]="airline">
+                </div>
+            </div>
+            <div class="col">
+                <div class="input-group">
+                    <span class="input-group-text" id="add-arrival-input-route">Flight #</span>
+                    <input type="text" class="form-control" placeholder="Flight #" name="route"
+                        aria-label="route" aria-describedby="add-arrival-input-route" required [(ngModel)]="route">
+                </div>
+            </div>
+            <div class="col-md-1">
+                <button type="submit" class="btn btn-primary" [disabled]="!addArrivalForm.valid">Add</button>
+            </div>
+        </div>
+    </form>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Scheduled</th>
+                <th>Status</th>
+                <th>Origin</th>
+                <th>Airline</th>
+                <th>Flight #</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th>?</th>
+                <td>?</td>
+                <td>?</td>
+                <td>?</td>
+                <td>?</td>
+            </tr>
+            <tr>
+                <th>?</th>
+                <td>?</td>
+                <td>?</td>
+                <td>?</td>
+                <td>?</td>
+            </tr>
+            <tr>
+                <th>?</th>
+                <td>?</td>
+                <td>?</td>
+                <td>?</td>
+                <td>?</td>
+            </tr>
+        </tbody>
+    </table>
 </div>

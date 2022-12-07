@@ -12,7 +12,7 @@ export class HeaderComponent {
   hideLogin: boolean = false;
   showAdminFeature: boolean = false;
 
-  onSubmitLoginForm() {
+  onSubmit() {
     if(this.username === this.password) {
       this.username = '';
       this.password = '';
