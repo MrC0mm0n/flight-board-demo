@@ -16,7 +16,7 @@ Tech details
 
 - Based off [Toronto Pearson Airport (YYZ)](https://www.torontopearson.com/en/whats-happening/stories/whyyz/how-our-runways-work) average 1300 flights arrive or depart from Pearson each day
 - Making a prototype based on YYZs flight board for [arrivals](https://www.torontopearson.com/en/arrivals) & [departures](https://www.torontopearson.com/en/departures)
-- Using [global airlines & airports data](https://openflights.org/data.html) and (massaging)(https://github.com/MrC0mm0n/flight-board-demo/tree/main/flight-board-demo-rest-api/data)
+- Using [global airlines & airports data](https://openflights.org/data.html) and [massaging](https://github.com/MrC0mm0n/flight-board-demo/tree/main/flight-board-demo-rest-api/data)
 - 
 
 ## Estimates
