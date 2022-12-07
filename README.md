@@ -12,14 +12,19 @@ Tech details
 - Create as a Spring Boot application
 - Define a simple schema that allows for the listing of inbound and outbound flights. Include information you deem relevant. List any assumptions made etc
 
-## Assumptions
+## Assumptions & Estimates
 
-- Based off [Toronto Pearson Airport (YYZ)](https://www.torontopearson.com/en/whats-happening/stories/whyyz/how-our-runways-work) average 1300 flights arrive or depart from Pearson each day
+- Based off [Toronto Pearson Airport (YYZ)](https://www.torontopearson.com/en/whats-happening/stories/whyyz/how-our-runways-work),
+  - Average 1,300 flights arrive or depart from Pearson each day with 6 months of data retention. Assuming arrivals & departures are equal. 1,300 flights x 6 months retention period x 30 days/month = 234,000 flights in 6 months, i.e, 117,000 arrivals and departures, respectively.
+  - Average 130,000 passengers fly via YYZ each day. 130,000 passengers each day/24 hours ≈ 5,416 passengers/hour. Assuming passengers & maybe 3 of thier loved ones visit the flight board app for updates on an hourly basis, which makes 16,248 hourly ≈ 270 minutely ≈ 5 secondly visitor traffic.
+- Peaks and troughs will require auto-scaling of the system
+- User traffic based on geography would require regional scaling
+
+## Design
+
 - Making a prototype based on YYZs flight board for [arrivals](https://www.torontopearson.com/en/arrivals) & [departures](https://www.torontopearson.com/en/departures)
-- Using [global airlines & airports data](https://openflights.org/data.html) and [massaging](https://github.com/MrC0mm0n/flight-board-demo/tree/main/flight-board-demo-rest-api/data)
-- 
+- Using [global airlines & airports data](https://openflights.org/data.html) and [massaging the data](https://github.com/MrC0mm0n/flight-board-demo/tree/main/flight-board-demo-rest-api/data)
 
-## Estimates
+## Data Model
 
-
-
+![ERD diagram](flight-board-demo-rest-api/media/flight-board-erd.png)
