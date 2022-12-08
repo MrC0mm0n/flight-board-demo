@@ -27,7 +27,7 @@ Tech details
 ## Design
 
 - Making a prototype based on YYZs flight board for [arrivals](https://www.torontopearson.com/en/arrivals) & [departures](https://www.torontopearson.com/en/departures)
-- Using [global airlines & airports data](https://openflights.org/data.html) and [massaging the data](https://github.com/MrC0mm0n/flight-board-demo/tree/main/flight-board-demo-rest-api/data)
+- Using [global airlines & airports data](https://openflights.org/data.html) and [massaging the data](data)
 
 ### Arrival Board UI
 
