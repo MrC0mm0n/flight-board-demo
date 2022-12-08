@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Airport } from 'src/app/dto/airport';
 import { Status } from 'src/app/dto/status';
+import { AirportService } from 'src/app/service/airport.service';
 import { StatusService } from 'src/app/service/status.service';
 
 @Component({
@@ -17,13 +19,19 @@ export class ArrivalComponent implements OnInit {
   route: string = '';
 
   statuses: Status[] | undefined;
+  airports: Airport[] | undefined;
 
-  constructor(private statusService: StatusService) {
+  constructor(private statusService: StatusService, private airportService: AirportService) {
   } 
 
   ngOnInit() {
     this.statusService.getArrivalStatuses().subscribe(data => {
       this.statuses = data._embedded.statuses;
+    });
+
+    this.airportService.findAll().subscribe(data => {
+      this.airports = data._embedded.airports;
+      console.log(this.airports);
     });
   }
 

@@ -22,8 +22,11 @@
             <div class="col">
                 <div class="input-group">
                     <span class="input-group-text" id="add-arrival-input-origin">Origin</span>
-                    <input type="text" class="form-control" placeholder="Origin" name="origin"
+                    <select class="form-control" placeholder="Origin" name="origin"
                         aria-label="Origin" aria-describedby="add-arrival-input-origin" required [(ngModel)]="origin">
+                        <option value="">Select</option>
+                        <option *ngFor="let airport of airports" [ngValue]="airport.code">{{ airport.name }}</option>
+                    </select>
                 </div>
             </div>
         </div>

@@ -5,14 +5,14 @@ import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
-export class StatusService {
+export class AirportService {
 
-  private baseUrl = "http://localhost:8080/api/statuses";
+  private baseUrl = "http://localhost:8080/api/airports";
 
   constructor(private http: HttpClient) { }
 
-  getArrivalStatuses(): Observable<any>{
-    return this.http.get<any>(this.baseUrl+'/search/getByArrivalTrue');
+  findAll(): Observable<any>{
+    return this.http.get<any>(this.baseUrl+'?size=5000');
   }
 
 }
