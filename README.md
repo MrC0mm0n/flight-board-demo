@@ -59,6 +59,8 @@ Departure component to display below tabular data. After admin logs in, admin fe
 | POST  | /departure  | Save new flight details |
 | PATCH  | /departure/{id}  | Update existing flight details |
 
+Using [Spring Data REST](https://spring.io/projects/spring-data-rest) for backend APIs to [speed up development](https://speakerdeck.com/olivergierke/advanced-spring-data-rest?slide=5)
+
 ## Data Model
 
 ![ERD diagram](flight-board-demo-rest-api/media/flight-board-erd.png)
@@ -72,3 +74,4 @@ Departure component to display below tabular data. After admin logs in, admin fe
 - [Application Gateway](https://azure.microsoft.com/en-us/products/application-gateway/)
 - [Azure Web PubSub](https://azure.microsoft.com/en-us/products/web-pubsub/)
 
+This solution will cost CAD $1,300/month and upwards
