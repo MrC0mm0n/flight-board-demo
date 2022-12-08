@@ -5,13 +5,13 @@
     </a>
 
     <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
-      <li><a href="/arrivals" class="nav-link px-2 link-dark">Arrivals</a></li>
-      <li><a href="/departures" class="nav-link px-2 link-dark">Departures</a></li>
+      <li><a href="/arrivals" class="nav-link px-2 link-dark"><h4><i class="fas fa-plane-arrival"></i> Arrivals</h4></a></li>
+      <li><a href="/departures" class="nav-link px-2 link-dark"><h4><i class="fas fa-plane-departure"></i> Departures</h4></a></li>
     </ul>
 
     <div class="col-md-3 text-end">
-      <button type="button" class="btn btn-outline-primary me-2" *ngIf="!hideLogin"
-        data-bs-toggle="modal" data-bs-target="#loginModal">Login</button>
+      <button type="button" class="btn btn-warning" *ngIf="!hideLogin"
+        data-bs-toggle="modal" data-bs-target="#loginModal"><i class="fas fa-sign-in-alt"></i> Login</button>
     </div>
   </header>
 </div>
