@@ -19,7 +19,7 @@ Tech details
   - Average 130,000 passengers fly via YYZ each day. 130,000 passengers each day/24 hours ≈ 5,416 passengers/hour. Assuming passengers & maybe 2 of thier loved ones visit the flight board app for updates on an 10 min basis, which makes 16,248 hourly ≈ 270 minutely ≈ 5 secondly visitor traffic. This translates to atleast 5+ read queries on the database per second. Hence the system has to be **optimized for high reads compared to writes**. This can be achieved with a cluster configuration wherein a primary DB receives writes and replica DBs for reads. DB indexes, DB server query cache, server-side caching, full-text search engine, etc... can help further to optimize performance.
   - Assuming atleast 10 RPS with each task time of 100ms would require **4 cores of compute power**, [RPS = Num. cores/Task time](https://wrongsideofmemphis.com/2013/10/21/requests-per-second-a-reference/)
 - Admins work in 8 hour shifts and ONLY one admin makes updates to flight details at any given time
-- Peaks and troughs will require **auto-scaling** of the app & database
+- Peaks and troughs will require **auto-scaling** of the app & database. During epidemic events that would halt the airline industry, the services can be bought down to reduce costs.
 - User traffic based on geography would require **regional scaling**
 - Implementing solution in Microsoft Azure
 - YYZs flight board currently requires users to refresh the page to load new or updated flight details. A better approach would be to push changes via a **real-time messaging system**
@@ -32,7 +32,7 @@ Tech details
 ### Arrival Board UI
 
 #### Angular Frontend
-Arrival component to display below tabular data. After admin logs in, admin features will be visible on the UI.
+Arrival feature component to display below tabular data. After admin logs in, admin features will be visible on the UI.
 | Arriving time  | Status | Origin | Airline | Flight  |
 | ------------- | ------------- | ------------- | ------------- | ------------- |
 | ~~11:52~~ 18:43 | DELAYED | Dallas-Fort Worth, USA | AIR CANADA JAZZ | AC8974 |
@@ -47,7 +47,7 @@ Arrival component to display below tabular data. After admin logs in, admin feat
 ### Departure Board UI
 
 #### Angular Frontend
-Departure component to display below tabular data. After admin logs in, admin features will be visible on the UI.
+Departure feature component to display below tabular data. After admin logs in, admin features will be visible on the UI.
 | Departing time  | Status | Destination | Airline | Flight # |
 | ------------- | ------------- | ------------- | ------------- | ------------- |
 | ~~11:52~~ 18:43 | DELAYED | Dallas-Fort Worth, USA | AIR CANADA JAZZ | AC8974 |
