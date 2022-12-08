@@ -74,4 +74,4 @@ Using [Spring Data REST](https://spring.io/projects/spring-data-rest) for backen
 - [Application Gateway](https://azure.microsoft.com/en-us/products/application-gateway/)
 - [Azure Web PubSub](https://azure.microsoft.com/en-us/products/web-pubsub/)
 
-This solution will cost CAD $1,300/month and upwards
+This solution will cost ![CAD $1,300/month](flight-board-demo-rest-api/media/price-estimate.xlsx) and upwards
