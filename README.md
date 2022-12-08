@@ -74,4 +74,6 @@ Using [Spring Data REST](https://spring.io/projects/spring-data-rest) for backen
 - [Application Gateway](https://azure.microsoft.com/en-us/products/application-gateway/)
 - [Azure Web PubSub](https://azure.microsoft.com/en-us/products/web-pubsub/)
 
+![Architecture Diagram](media/flight-board-architecture.png)
+
 This solution will cost [CAD $1,300/month](media/price-estimate.xlsx) and upwards
