@@ -10,6 +10,12 @@ import javax.validation.constraints.NotNull;
 
 import org.hibernate.annotations.GenericGenerator;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
+import com.fasterxml.jackson.annotation.JsonFormat;
+
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 import lombok.Data;
 
 @Data
@@ -32,8 +38,10 @@ public class Arrival {
 	private String route;
 
 	@NotNull
+	@JsonFormat(timezone = "America/Toronto")
 	private Date scheduled;
 
+	@JsonFormat(timezone = "America/Toronto")
 	private Date revised;
 
 	@NotNull
