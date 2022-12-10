@@ -15,4 +15,8 @@ export class AirlineService {
     return this.http.get<any>(this.baseUrl+'?size=5000');
   }
 
+  getById(id: number): Observable<any>{
+    return this.http.get<any>(this.baseUrl+'/'+id);
+  }
+
 }

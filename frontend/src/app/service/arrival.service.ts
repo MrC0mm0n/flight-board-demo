@@ -16,8 +16,12 @@ export class ArrivalService {
     return this.http.post<Arrival>(this.baseUrl, arrival);
   }
 
-  findAll(): Observable<any>{
-    return this.http.get<any>(this.baseUrl+'?size=5000');
+  getByOrderByScheduledDesc(): Observable<any> {
+    return this.http.get<any>(this.baseUrl+'/search/getByOrderByScheduledDesc?projection=pArrival');
+  }
+
+  getById(id: string): Observable<any> {
+    return this.http.get<any>(this.baseUrl+'/'+id+'?projection=pArrival');
   }
   
 }

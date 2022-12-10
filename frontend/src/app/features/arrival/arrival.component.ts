@@ -16,6 +16,7 @@ import { Router } from '@angular/router';
 })
 export class ArrivalComponent implements OnInit {
 
+  // --- for 2-way data binding on input fields ---
   id: string = '';
   scheduled: Date | undefined;
   status: string = '';
@@ -23,13 +24,16 @@ export class ArrivalComponent implements OnInit {
   revised: Date | undefined;
   airline: string = '';
   route: string = '';
+  // ---
 
-  arrival: Arrival;
+  arrival: Arrival; // for saving
 
+  // --- for input fields ---
   statuses: Status[] | undefined;
   airports: Airport[] | undefined;
   airlines: Airline[] | undefined;
-  arrivals: Arrival[] | undefined;
+  arrivals: any[] | undefined;
+  // ---
 
   constructor(
     private statusService: StatusService, 
@@ -58,9 +62,8 @@ export class ArrivalComponent implements OnInit {
   }
 
   reloadArrivals() {
-    this.arrivalService.findAll().subscribe(data => {
+    this.arrivalService.getByOrderByScheduledDesc().subscribe(data => {
       this.arrivals = data._embedded.arrivals;
-      console.log(this.arrivals);
     });
   }
 
@@ -74,10 +77,38 @@ export class ArrivalComponent implements OnInit {
     this.arrival.route = this.route;
 
     this.arrivalService.save(this.arrival).subscribe(result => this.refresh());
+
+    this.clearForm();
   }
 
   refresh() {
     this.reloadArrivals();
+  }
+
+  editArrival(id: string) {
+    this.arrivalService.getById(id).subscribe(data => {
+      console.log(data);
+      this.id = data.id;
+      this.scheduled = data.scheduled.slice(0, -13);
+      this.status = data.status.id;
+      this.origin = data.origin.code;
+      if(data.revised != null)
+        this.revised = data.revised.slice(0, -13);
+      else
+      this.revised = undefined;
+      this.airline = data.airline.id;
+      this.route = data.route;
+    });
+  }
+
+  clearForm() {
+    this.id = '';
+    this.scheduled = undefined;
+    this.status = '';
+    this.origin = '';
+    this.revised = undefined;
+    this.airline = '';
+    this.route = '';
   }
 
 }

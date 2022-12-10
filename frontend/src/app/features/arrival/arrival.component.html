@@ -1,8 +1,12 @@
 <div class="container">
 
     <form class="border rounded p-3" name="addArrivalForm" #addArrivalForm="ngForm" (ngSubmit)="addArrivalForm.form.valid && onSubmit()" novalidate>
-        <div class="row mb-3 text-center">
-            <div class="col"><h5>Admin feature</h5></div>
+        <div class="row mb-3">
+            <div class="col"><h5><i class="fas fa-user-shield"></i> Admin feature</h5></div>
+            <div class="col">
+                <button type="submit" class="btn btn-primary me-2" [disabled]="!addArrivalForm.valid"><i class="far fa-save"></i> Save</button>
+                <button type="submit" class="btn btn-primary" (click)="clearForm()"><i class="fas fa-broom"></i> Clear</button>
+            </div>
         </div>
         <div class="row mb-3">
             <div class="col">
@@ -58,9 +62,6 @@
                         aria-label="route" aria-describedby="add-arrival-input-route" required [(ngModel)]="route">
                 </div>
             </div>
-            <div class="col-md-1">
-                <button type="submit" class="btn btn-primary" [disabled]="!addArrivalForm.valid"><i class="far fa-save"></i> Save</button>
-            </div>
             <input type="hidden" name="id" [(ngModel)]="id">
         </div>
     </form>
@@ -73,7 +74,7 @@
                 <th>Origin</th>
                 <th>Airline</th>
                 <th>Flight #</th>
-                <th>Actions</th>
+                <th>Actions <i class="fas fa-user-shield"></i></th>
             </tr>
         </thead>
         <tbody>
@@ -81,13 +82,20 @@
                 <option *ngFor="let airline of airlines" [ngValue]="airline.id">{{ airline.name }} (IATA: {{ airline.iata }}) (ICAO: {{ airline.icao }})</option>
              -->
             <tr *ngFor="let arrival of arrivals">
-                <td>{{ arrival.scheduled | date:'short' }} {{ arrival.revised | date:'short' }}</td>
-                <td>{{ arrival.status }}</td>
-                <td>{{ arrival.origin }}</td>
-                <td>{{ arrival.airline }}</td>
+                <td>
+                    <ng-container *ngIf="arrival.revised == null">
+                        {{ arrival.scheduled | date:'short' }}
+                    </ng-container>
+                    <ng-container *ngIf="arrival.revised != null">
+                        <span class="me-3 text-decoration-line-through">{{ arrival.scheduled | date:'short' }}</span><span class="badge text-bg-warning">{{ arrival.revised | date:'short' }}</span>
+                    </ng-container>
+                </td>
+                <td>{{ arrival.status.label }}</td>
+                <td>{{ arrival.origin.name }}</td>
+                <td>{{ arrival.airline.name }}</td>
                 <td>{{ arrival.route }}</td>
                 <td>
-                    <button type="button" class="btn btn-outline-dark btn-sm"><i class="far fa-edit"></i></button>
+                    <button type="button" class="btn btn-outline-dark btn-sm" (click)="editArrival(arrival.id)"><i class="far fa-edit"></i></button>
                 </td>
             </tr>
         </tbody>
