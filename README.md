@@ -84,3 +84,4 @@ This solution will cost [CAD $1,300/month](media/price-estimate.xlsx) and upward
 - Angular
 - Bootstrap
 - Fontawesome
+- Limited verification scope to Google Chrome compatibility
