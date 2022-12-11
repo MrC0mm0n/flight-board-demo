@@ -91,4 +91,5 @@ This solution will cost [CAD $1,300/month](media/price-estimate.xlsx) and upward
 ### Codebase
 - [Frontend](https://github.com/MrC0mm0n/flight-board-frontend), [Website](https://ambitious-ground-0244a4410.2.azurestaticapps.net/)
 - [Backend](https://github.com/MrC0mm0n/flight-board-backend), [API](https://flight-board-backend.azurewebsites.net/api)
+
 ![Architecture Diagram](media/prototype.png)
