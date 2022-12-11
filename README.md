@@ -77,7 +77,7 @@ Using [Spring Data REST](https://spring.io/projects/spring-data-rest) for backen
 This solution will cost [CAD $1,300/month](media/price-estimate.xlsx) and upwards per region
 ![Architecture Diagram](media/flight-board-architecture.png)
 
-## Implementation
+## Prototype Implementation
 
 - MariaDB
 - Spring Boot
