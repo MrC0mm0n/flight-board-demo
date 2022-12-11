@@ -85,6 +85,8 @@ This solution will cost [CAD $1,300/month](media/price-estimate.xlsx) and upward
 - Bootstrap
 - Fontawesome
 - Limited verification scope to Google Chrome compatibility
+- Github
+- VSCode
 
 ### Codebase
 - [Frontend](https://github.com/MrC0mm0n/flight-board-frontend)
