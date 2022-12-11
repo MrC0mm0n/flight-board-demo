@@ -88,4 +88,4 @@ This solution will cost [CAD $1,300/month](media/price-estimate.xlsx) and upward
 
 ### Codebase
 - [Frontend](https://github.com/MrC0mm0n/flight-board-frontend)
-- [Backend](https://github.com/MrC0mm0n/flight-board-backend)
+- [Backend](https://github.com/MrC0mm0n/flight-board-backend), [API](https://flight-board-backend.azurewebsites.net/api)
