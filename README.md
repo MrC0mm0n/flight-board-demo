@@ -15,12 +15,14 @@ Tech details
 ## Assumptions & Estimates
 
 - Based off [Toronto Pearson Airport (YYZ)](https://www.torontopearson.com/en/whats-happening/stories/whyyz/how-our-runways-work),
-  - Average 1,300 flights arrive or depart from Pearson each day with **6 months of data retention**. Assuming arrivals & departures are equal. 1,300 flights x 6 months retention period x 30 days/month = **234,000 flights in 6 months**, i.e, 117,000 arrivals and departures, respectively. **100 GB storage space** will suffice.
-  - Average 130,000 passengers fly via YYZ each day. 130,000 passengers each day/24 hours ≈ 5,416 passengers/hour. Assuming passengers & maybe 2 of thier loved ones visit the flight board app for updates on an 10 min basis, which makes **16,248/hour ≈ 270/minute ≈ 5/second visitor traffic**. This translates to atleast 5+ read queries on the database per second. Hence the system has to be **optimized for high reads compared to writes**. This can be achieved with a cluster configuration wherein a primary DB receives writes and replica DBs for reads. DB indexes, DB server query cache, server-side caching, full-text search engine, etc... can help further to optimize performance.
-  - Assuming atleast 10 RPS with each task time of 100ms would require **4 cores of compute power**, [RPS = Num. cores/Task time](https://wrongsideofmemphis.com/2013/10/21/requests-per-second-a-reference/)
-- Admins work in 8 hour shifts and ONLY one admin makes updates to flight details at any given time
-- Peaks and troughs will require **auto-scaling** of the app & database. During epidemic events that would halt the airline industry, the services can be bought down to reduce costs.
-- User traffic based on geography would require **regional scaling**
+  - Assuming **6 months of data retention**
+  - Average 1,300 flights arrive or depart from Pearson each day, 1,300 flights each day/24 hours ≈ 54 flights/hour. Assuming arrivals & departures are equal. 1,300 flights x 6 months retention period x 30 days/month = **234,000 flights in 6 months**, i.e, 117,000 arrivals and departures, respectively. **100 GB storage space** will suffice.
+  - Average 130,000 passengers fly via YYZ each day, 130,000 passengers each day/24 hours ≈ 5,416 passengers/hour. Assuming passengers & maybe 2 of thier loved ones visit the flight board app for updates during their arrival/departure windows, which makes **5,416 views/hour x 3 = 16,248 views/hour ≈ 270/minute ≈ 5/second visitor traffic**. This translates to atleast 5+ read queries on the database per second. Hence the system has to be **optimized for high reads compared to writes**. This can be achieved with a cluster configuration wherein a primary DB receives writes and replica DBs for reads. DB indexes, DB server query cache, server-side caching, full-text search engine, etc... can help further to optimize performance.
+  - Assuming atleast twice the amount of requests, 5/second visitor traffic x 2 = 10 RPS with each task time of 100ms would require **4 cores of compute power**, [RPS = Num. cores/Task time](https://wrongsideofmemphis.com/2013/10/21/requests-per-second-a-reference/)
+- Admins work in 8 hour shifts and ONLY one admin makes updates to flight details at any given time, hence considering this workload insignificant.
+- Peaks and troughs will require **auto-scaling** of the app & database.
+-- During epidemic events that would halt the airline industry, the services can be bought down to reduce costs.
+-- User traffic based on geography would require **regional scaling**
 - Implementing solution in Microsoft Azure
 - YYZs flight board currently requires users to refresh the page to load new or updated flight details. A better approach would be to push changes via a **real-time messaging system**
 
