@@ -42,9 +42,9 @@ Arrival feature component to display below tabular data. After admin logs in, ad
 #### Spring Boot Backend
 | HTTP Method  | URI | Description |
 | ------------- | ------------- | ------------- |
-| GET  | /arrival?from=:datetime&to=:datetime  | Get flights between particular datetime intervals |
-| POST  | /arrival  | Save new flight details |
-| PATCH  | /arrival/{id}  | Update existing flight details |
+| GET  | /arrival?from=:datetime&to=:datetime | Get flights between particular datetime intervals |
+| POST  | /arrival | Save new flight details |
+| PATCH  | /arrival/{id} | Update existing flight details |
 
 ### Departure Board UI
 
@@ -57,9 +57,16 @@ Departure feature component to display below tabular data. After admin logs in, 
 #### Spring Boot Backend
 | HTTP Method  | URI | Description |
 | ------------- | ------------- | ------------- |
-| GET  | /departure?from=:datetime&to=:datetime  | Get flights between particular datetime intervals |
-| POST  | /departure  | Save new flight details |
-| PATCH  | /departure/{id}  | Update existing flight details |
+| GET  | /departure?from=:datetime&to=:datetime | Get flights between particular datetime intervals |
+| POST  | /departure | Save new flight details |
+| PATCH  | /departure/{id} | Update existing flight details |
+
+### Misc. APIs
+| HTTP Method  | URI | Description |
+| ------------- | ------------- | ------------- |
+| GET  | /airline | Get airlines |
+| GET  | /airport | Get airports |
+| GET  | /status | Get statuses |
 
 Using [Spring Data REST](https://spring.io/projects/spring-data-rest) for backend APIs to [speed up development](https://speakerdeck.com/olivergierke/advanced-spring-data-rest?slide=5)
 
