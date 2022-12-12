@@ -64,8 +64,8 @@ Departure feature component to display below tabular data. After admin logs in, 
 ### Misc. APIs
 | HTTP Method  | URI | Description |
 | ------------- | ------------- | ------------- |
-| GET  | /airline | Get airlines |
-| GET  | /airport | Get airports |
+| GET  | /airline?nameContains=:string | Get airlines based on user input |
+| GET  | /airport?nameContains=:string | Get airports based on user input |
 | GET  | /status | Get statuses |
 
 Using [Spring Data REST](https://spring.io/projects/spring-data-rest) for backend APIs to [speed up development](https://speakerdeck.com/olivergierke/advanced-spring-data-rest?slide=5)
