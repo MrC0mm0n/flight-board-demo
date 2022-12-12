@@ -21,8 +21,8 @@ Tech details
   - Assuming atleast twice the amount of requests, 5/second visitor traffic x 2 = 10 RPS with each task time of 100ms would require **4 cores of compute power**, [RPS = Num. cores/Task time](https://wrongsideofmemphis.com/2013/10/21/requests-per-second-a-reference/)
 - Admins work in 8 hour shifts and ONLY one admin makes updates to flight details at any given time, hence considering this workload insignificant.
 - Peaks and troughs will require **auto-scaling** of the app & database.
--- During epidemic events that would halt the airline industry, the services can be bought down to reduce costs.
--- User traffic based on geography would require **regional scaling**
+  - During epidemic events that would halt the airline industry, the services can be bought down to reduce costs.
+  - User traffic based on geography would require **regional scaling**
 - Implementing solution in Microsoft Azure
 - YYZs flight board currently requires users to refresh the page to load new or updated flight details. A better approach would be to push changes via a **real-time messaging system**
 
